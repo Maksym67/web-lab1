@@ -17,11 +17,11 @@ router.get("/theaters", async (req, res) => {
        }
 
     if (latitude) {
-        //hard to do
+        dbQuery["location.geo.coordinates"] = latitude;
        }
 
     if (longitude) {
-        //also hard to do :(
+        dbQuery["location.geo.coordinates"] = longitude;
        }
 
     const docs = await Theaters.find(dbQuery);
